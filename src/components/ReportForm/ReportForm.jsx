@@ -40,6 +40,7 @@ export default function ReportForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const captchaRef = useRef(null);
   const reCaptchaSiteKey = process.env.REACT_APP_SITE_KEY;
+
   const [sendReport] = useAddReportMutation();
 
   const {
