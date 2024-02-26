@@ -1,15 +1,11 @@
 @import-normalize;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-:root {
-  /* COLOR */
-  --accent-color: #1976d2;
-  --error-color: #cc0000;
-  --grey-text: #363535;
-}
-
 body {
   margin: 0;
+  background-image: url('./images/pexels-johannes-plenio-1103970.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
