@@ -1,14 +1,5 @@
 export const BASE_URL = 'https://profile.short.io/tmp';
 
-export const DEFAULT_FORM_VALUES = {
-  abusedURL: '',
-  email: '',
-  reportType: '',
-  spamProof: '',
-  targetCountry: '',
-  captchaToken: '',
-};
-
 export const DATE_FORMAT = 'dd/MM/yyyy HH:mm';
 
 export const PAGINATION_LIMIT = 8;
@@ -17,6 +8,15 @@ export const URL_PATTERN =
   /^(https?):\/\/[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)$/;
 
 export const EMAIL_PATTERN = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+export const DEFAULT_FORM_VALUES = {
+  abusedURL: '',
+  email: '',
+  reportType: '',
+  spamProof: '',
+  targetCountry: '',
+  captchaToken: '',
+};
 
 export const REPORT_TYPE = {
   social_engineering: 'social_engineering',
