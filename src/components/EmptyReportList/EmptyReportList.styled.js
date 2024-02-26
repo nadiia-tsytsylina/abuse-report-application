@@ -4,7 +4,6 @@ import { theme } from 'theme';
 
 export const Text = styled('p')`
   font-size: 24px;
-  font-weight: 500;
 `;
 
 export const StyledPaper = styled(Paper)`
