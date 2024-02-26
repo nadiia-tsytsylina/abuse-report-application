@@ -1,3 +1,5 @@
+export const BASE_URL = 'https://profile.short.io/tmp';
+
 export const DEFAULT_FORM_VALUES = {
   abusedURL: '',
   email: '',
