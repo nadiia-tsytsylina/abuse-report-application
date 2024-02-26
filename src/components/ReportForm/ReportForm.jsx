@@ -21,6 +21,7 @@ import {
   REPORT_TYPE_OPTIONS,
   DEFAULT_FORM_VALUES,
   REPORT_TYPE,
+  REACT_APP_SITE_KEY,
 } from 'constants/constants';
 import { countries } from 'data/countries';
 import SnackBar from 'components/SnackBar/SnackBar';
@@ -39,7 +40,6 @@ export default function ReportForm() {
   const reCaptchaAction = 'abuse';
   const { executeRecaptcha } = useGoogleReCaptcha();
   const captchaRef = useRef(null);
-  const reCaptchaSiteKey = process.env.REACT_APP_SITE_KEY;
 
   const [sendReport] = useAddReportMutation();
 
@@ -201,7 +201,7 @@ export default function ReportForm() {
             {...register('captchaToken', { required: true })}
           />
           {isRecaptchaShown && (
-            <ReCAPTCHA sitekey={reCaptchaSiteKey} ref={captchaRef} />
+            <ReCAPTCHA sitekey={REACT_APP_SITE_KEY} ref={captchaRef} />
           )}
           <Button
             type="submit"

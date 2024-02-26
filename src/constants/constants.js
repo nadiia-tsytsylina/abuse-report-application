@@ -9,6 +9,10 @@ export const URL_PATTERN =
 
 export const EMAIL_PATTERN = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
+export const REACT_APP_SECRET_KEY = '6LdO8JcUAAAAAJWQi_B27yDFuShbD2Cvq4AqcOCQ';
+export const REACT_APP_SITE_KEY = '6Ld0EWEUAAAAAFSnSvsm-azMwTHMbi5kdw1qmEti';
+//я понимаю, что эти данные должны быть в .env, но у меня возникли проблемы с доступом к ним при деплое
+
 export const DEFAULT_FORM_VALUES = {
   abusedURL: '',
   email: '',
