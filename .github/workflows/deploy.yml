@@ -16,6 +16,9 @@ jobs:
           npm install
           npm run lint:js
           npm run build
+          env:
+            REACT_APP_SITE_KEY: ${{ secrets.REACT_APP_SITE_KEY }}
+            REACT_APP_SECRET_KEY: ${{ secrets.REACT_APP_SECRET_KEY }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
