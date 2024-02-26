@@ -1,9 +1,9 @@
-import { Container, Text } from './EmptyReportList.styled';
+import { StyledPaper, Text } from './EmptyReportList.styled';
 
 export default function EmptyReportList() {
   return (
-    <Container>
+    <StyledPaper>
       <Text>You don't have any reports yet</Text>
-    </Container>
+    </StyledPaper>
   );
 }

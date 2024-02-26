@@ -1,15 +1,18 @@
 import { Outlet } from 'react-router-dom';
-import { NavContainer, Container, StyledLink, MainNav } from './Layout.styled';
+import { Container, StyledLink } from './Layout.styled';
+import { AppBar, Toolbar } from '@mui/material';
 
 export default function Layout() {
   return (
     <>
-      <NavContainer>
-        <MainNav>
-          <StyledLink to="/">Send Report</StyledLink>
-          <StyledLink to="/reports">All Reports</StyledLink>
-        </MainNav>
-      </NavContainer>
+      <nav>
+        <AppBar position="static">
+          <Toolbar sx={{ gap: '24px' }}>
+            <StyledLink to="/">Send Report</StyledLink>
+            <StyledLink to="/reports">All Reports</StyledLink>
+          </Toolbar>
+        </AppBar>
+      </nav>
       <Container>
         <Outlet />
       </Container>

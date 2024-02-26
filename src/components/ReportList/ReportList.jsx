@@ -1,4 +1,11 @@
-import { Link, Pagination, Table, TableBody, TableHead } from '@mui/material';
+import {
+  Link,
+  Pagination,
+  Table,
+  TableBody,
+  TableHead,
+  TableRow,
+} from '@mui/material';
 import { format } from 'date-fns';
 import { useState } from 'react';
 
@@ -9,12 +16,11 @@ import {
 } from 'constants/constants';
 
 import {
+  StyledPaper,
   StyledStack,
   StyledTableCell,
-  StyledTableRow,
   TableHeader,
 } from './ReportList.styled';
-
 
 export default function ReportList({ reports }) {
   const [page, setPage] = useState(1);
@@ -29,21 +35,21 @@ export default function ReportList({ reports }) {
   };
 
   return (
-    <StyledStack mt={3}>
+    <StyledPaper>
       <Table>
         <TableHead>
-          <StyledTableRow>
+          <TableRow>
             <TableHeader>Abused URL</TableHeader>
             <TableHeader>Email</TableHeader>
             <TableHeader>Report Type</TableHeader>
             <TableHeader>Date</TableHeader>
             <TableHeader>Spam Proof</TableHeader>
             <TableHeader>Target Country</TableHeader>
-          </StyledTableRow>
+          </TableRow>
         </TableHead>
         <TableBody>
           {currentPageData.map(report => (
-            <StyledTableRow key={report.id}>
+            <TableRow key={report.id}>
               <StyledTableCell>
                 <Link
                   href={report.abusedURL}
@@ -73,22 +79,18 @@ export default function ReportList({ reports }) {
               <StyledTableCell>
                 {report.targetCountry !== '' ? report.targetCountry : '-'}
               </StyledTableCell>
-            </StyledTableRow>
+            </TableRow>
           ))}
         </TableBody>
       </Table>
-      <StyledStack
-        display="flex"
-        direction="row"
-        justifyContent="center"
-        mt={2}
-      >
+      <StyledStack direction="row" justifyContent="center" spacing={2}>
         <Pagination
+          color="secondary"
           count={Math.ceil(reports.length / PAGINATION_LIMIT)}
           page={page}
           onChange={handlePageChange}
         />
       </StyledStack>
-    </StyledStack>
+    </StyledPaper>
   );
 }
