@@ -13,6 +13,8 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { ThemeProvider } from '@mui/material';
+import { theme } from 'theme';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,12 +34,14 @@ function App() {
   }, [clientToken, dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<SendReport />} />
-        <Route path="reports" element={<AllReports />} />
-      </Route>
-    </Routes>
+    <ThemeProvider theme={theme}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<SendReport />} />
+          <Route path="reports" element={<AllReports />} />
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
 }
 
