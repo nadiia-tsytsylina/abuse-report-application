@@ -1,10 +1,11 @@
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import ReportForm from 'components/ReportForm/ReportForm';
-import { REACT_APP_SITE_KEY } from 'constants/constants';
 
 export default function SendReport() {
+  const reCaptchaKey = process.env.REACT_APP_SECRET_KEY;
+
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={REACT_APP_SITE_KEY}>
+    <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
       <ReportForm />;
     </GoogleReCaptchaProvider>
   );

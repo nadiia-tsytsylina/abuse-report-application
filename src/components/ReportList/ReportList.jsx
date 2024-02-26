@@ -83,14 +83,16 @@ export default function ReportList({ reports }) {
           ))}
         </TableBody>
       </Table>
-      <StyledStack direction="row" justifyContent="center" spacing={2}>
-        <Pagination
-          color="secondary"
-          count={Math.ceil(reports.length / PAGINATION_LIMIT)}
-          page={page}
-          onChange={handlePageChange}
-        />
-      </StyledStack>
+      {reports.length > PAGINATION_LIMIT && (
+        <StyledStack direction="row" justifyContent="center" spacing={2}>
+          <Pagination
+            color="secondary"
+            count={Math.ceil(reports.length / PAGINATION_LIMIT)}
+            page={page}
+            onChange={handlePageChange}
+          />
+        </StyledStack>
+      )}
     </StyledPaper>
   );
 }
